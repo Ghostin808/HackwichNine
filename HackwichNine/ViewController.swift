@@ -9,10 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     @IBOutlet weak var segementedControl: UISegmentedControl!
     
     @IBOutlet weak var myLabel: UILabel!
+    
+    @IBOutlet weak var textField: UITextField!
+    
+    var input = String()
     
     override func viewDidLoad() { segementedControl.selectedSegmentIndex = -1
         super.viewDidLoad()
@@ -25,13 +28,15 @@ class ViewController: UIViewController {
 
     @IBAction func segmentedControlPressed(_ sender: Any) {
         
+        let input = textField.text
+        
         switch segementedControl.selectedSegmentIndex {
         case 0:
-        self.myLabel.text = "Index 0 selected on the segmented control"
+        self.myLabel.text = input
         case 1:
-            self.myLabel.text = " Indext 1 selected, I got this."
+            self.myLabel.text = input
         case 2:
-            self.myLabel.text = " Woohoo, this makes sense now."
+            self.myLabel.text = input
             
         default: break
             
